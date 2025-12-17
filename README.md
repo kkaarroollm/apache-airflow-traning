@@ -2,9 +2,13 @@
 
 - DAG parser
 - API Server
-- Trigerrer
+- Trigger
 - Workers
 - DB (Mt data)
 
+---
+DAG File ----> DAG Processor ----> API Server ----> Scheduler (Celery) ----> Workers
 
-DAG File ----> DAG Processor ----> API SErver ----> Scheduler (Celery) ----> Workers
+* Big time processing ----- Kafka
+* Big data processing ----- Spark
+* ML processing ----------- TensorFlow/PyTorch
