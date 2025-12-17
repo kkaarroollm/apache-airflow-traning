@@ -1,0 +1,12 @@
+{"timestamp":"2025-12-17T13:12:44.614902Z","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-12-17T13:12:44.615127Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/data_processing.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-12-17T13:12:44.631297Z","level":"info","event":"Task instance is in running state","logger":"task.stdout"}
+{"timestamp":"2025-12-17T13:12:44.631386Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","logger":"task.stdout"}
+{"timestamp":"2025-12-17T13:12:44.631450Z","level":"info","event":"Current task name:load_data","logger":"task.stdout"}
+{"timestamp":"2025-12-17T13:12:44.631500Z","level":"info","event":"Dag name:etl_data_processing","logger":"task.stdout"}
+{"timestamp":"2025-12-17T13:12:44.632065Z","level":"info","event":"Transformed Data:","logger":"task.stdout"}
+{"timestamp":"2025-12-17T13:12:44.632122Z","level":"info","event":"{'age': 25, 'city': 'New York', 'name': 'Alice', 'age_next_year': 26}","logger":"task.stdout"}
+{"timestamp":"2025-12-17T13:12:44.632066Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.decorators.python._PythonDecoratedOperator","filename":"python.py","lineno":217}
+{"timestamp":"2025-12-17T13:12:44.636437Z","level":"info","event":"Task instance in success state","logger":"task.stdout"}
+{"timestamp":"2025-12-17T13:12:44.636528Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.RUNNING","logger":"task.stdout"}
+{"timestamp":"2025-12-17T13:12:44.636637Z","level":"info","event":"Task operator:<Task(_PythonDecoratedOperator): load_data>","logger":"task.stdout"}

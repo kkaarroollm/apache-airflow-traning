@@ -1,8 +1,11 @@
 # extract transform load
-from typing import Any
+from typing import Any, TYPE_CHECKING
 
 import pendulum
 from airflow.sdk import dag, task
+
+if TYPE_CHECKING:
+    import polars as pl
 
 
 
@@ -16,22 +19,25 @@ from airflow.sdk import dag, task
 def etl_data_processing_dag():
 
     @task.virtualenv(requirements=["polars==1.36.1"], system_site_packages=False)
-    def extract_data() -> dict[str, Any]:
+    def extract_data(data: "pl.DataFrame" = None) -> dict[str, Any]:
         import polars as pl
+        if data is None:
+            data = pl.DataFrame({
+                "name": ["Alice", "Bob", "Charlie"],
+                "age": [25, 30, 35],
+                "city": ["New York", "Los Angeles", "Chicago"]
+            })
+        return data.to_dicts()[0]
 
-        return pl.DataFrame({
-            "name": ["alice", "bob", "charlie"],
-            "age": [25, 30, 35]
-        }).to_dicts()[0]
 
     @task.virtualenv(requirements=["polars==1.36.1"], system_site_packages=False)
     def transform_data(data: dict[str, Any]) -> dict[str, Any]:
         import polars as pl
-        data = pl.DataFrame(data)
-        data = data.with_columns([
-            (data["age"] + 1).alias("age_next_year")
+        df = pl.DataFrame([data])
+        df = df.with_columns([
+            (pl.col("age") + 1).alias("age_next_year")
         ])
-        return data.to_dicts()[0]
+        return df.to_dicts()[0]
 
     @task
     def load_data(transformed_data: dict[str, Any]):
