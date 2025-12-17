@@ -1,0 +1,12 @@
+{"timestamp":"2025-12-17T11:28:59.227966Z","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-12-17T11:28:59.228184Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/data_processing.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-12-17T11:28:59.246744Z","level":"info","event":"Task instance is in running state","logger":"task.stdout"}
+{"timestamp":"2025-12-17T11:28:59.246906Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","logger":"task.stdout"}
+{"timestamp":"2025-12-17T11:28:59.246961Z","level":"info","event":"Current task name:transform_data","logger":"task.stdout"}
+{"timestamp":"2025-12-17T11:28:59.247002Z","level":"info","event":"Dag name:etl_data_processing","logger":"task.stdout"}
+{"timestamp":"2025-12-17T11:28:59.247054Z","level":"info","event":"Transforming data...","logger":"task.stdout"}
+{"timestamp":"2025-12-17T11:28:59.243340Z","level":"info","event":"Done. Returned value was: {'key': 'VALUE'}","logger":"airflow.task.operators.airflow.providers.standard.decorators.python._PythonDecoratedOperator","filename":"python.py","lineno":217}
+{"timestamp":"2025-12-17T11:28:59.243416Z","level":"info","event":"Pushing xcom","ti":"RuntimeTaskInstance(id=UUID('019b2c12-0849-773d-818f-10d5977b8a10'), task_id='transform_data', dag_id='etl_data_processing', run_id='manual__2025-12-17T11:28:56+00:00', try_number=1, dag_version_id=UUID('019b2c0d-7ab9-79d0-b2f8-57ce7f3e2a26'), map_index=-1, hostname='732f05f5b1ea', context_carrier={}, task=<Task(_PythonDecoratedOperator): transform_data>, bundle_instance=LocalDagBundle(name=dags-folder), max_tries=0, start_date=datetime.datetime(2025, 12, 17, 11, 28, 59, 110937, tzinfo=datetime.timezone.utc), end_date=None, state=<TaskInstanceState.RUNNING: 'running'>, is_mapped=False, rendered_map_index=None)","logger":"task","filename":"task_runner.py","lineno":1370}
+{"timestamp":"2025-12-17T11:28:59.252827Z","level":"info","event":"Task instance in success state","logger":"task.stdout"}
+{"timestamp":"2025-12-17T11:28:59.255467Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.RUNNING","logger":"task.stdout"}
+{"timestamp":"2025-12-17T11:28:59.255540Z","level":"info","event":"Task operator:<Task(_PythonDecoratedOperator): transform_data>","logger":"task.stdout"}
